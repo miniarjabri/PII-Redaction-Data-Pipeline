@@ -1,0 +1,280 @@
+/* Header styles */
+.rwf-header {
+  margin: 0;
+  padding: 50px 30px;
+  color: #fff;
+  background-color: #1a365d;
+  background-image: url("https://images.unsplash.com/photo-1729575846511-f499d2e17d79?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFja2dyb3VuZCUyMHdlYnNpdGV8ZW58MHx8MHx8fDA%3D");
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.rwf-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.rwf-header > div {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.rwf-header h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Breadcrumb styles */
+.rwf-breadcrumb {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.rwf-breadcrumb a {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.rwf-breadcrumb a:hover {
+  text-decoration: underline;
+  color: #3e8e41;
+}
+
+.rwf-breadcrumb-separator {
+  margin: 0 10px;
+  color: #666;
+}
+
+.rwf-breadcrumb-active {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Content styles */
+.rwf-content {
+  background-color: #fff;
+  margin: 20px 30px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Progress indicators */
+.progress-steps {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.progress-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.progress-step-icon.complete {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.progress-step-icon.processing {
+  background-color: #0066cc;
+  color: white;
+}
+
+.progress-step-icon.error {
+  background-color: #ef4444;
+  color: white;
+}
+
+.progress-step-connector {
+  width: 40px;
+  height: 2px;
+  background-color: #666;
+  margin: 0 8px;
+}
+
+/* Styles for PHI status text with emoji */
+.phi-status-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  font-size: 12px;
+}
+
+.phi-emoji {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Tab styles */
+.rwf-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.rwf-tab {
+  padding: 14px 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 15px;
+  color: #666;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.rwf-tab:hover {
+  color: #2c3e50;
+}
+
+.rwf-tab.active {
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  font-weight: 600;
+}
+
+/* Card styles */
+.rwf-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rwf-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Table styles */
+.document-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+}
+
+.document-table th {
+  text-align: left;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #2c3e50;
+  font-weight: 600;
+  background-color: #f8f9fa;
+}
+
+.document-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.document-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+/* Processing badge */
+.status-badge.processing {
+  background-color: #0066cc;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Error badge */
+.status-badge.error {
+  background-color: #ef4444;
+}
+
+/* Warning badge */
+.status-badge.warning {
+  background-color: #f59e0b;
+}
+
+/* Download links */
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  color: #4CAF50;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+  color: #3e8e41;
+}
+
+/* Error message */
+.error-message {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #d13212;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: flex-start;
+}
+
+.error-message::before {
+  content: "⚠️";
+  margin-right: 12px;
+  font-size: 20px;
+}

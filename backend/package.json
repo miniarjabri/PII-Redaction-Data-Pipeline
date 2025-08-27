@@ -1,0 +1,32 @@
+{
+  "name": "ccra-cdk-app",
+  "version": "0.1.0",
+  "bin": {
+    "ccra-cdk-app": "bin/cdk-app.js"
+  },
+  "scripts": {
+    "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
+    "cdk-deploy": "cdk deploy --require-approval never --all --outputs-file ./cdk-outputs.json && node gen-auth-config.js app",
+    "cdk-deploy-web": "cdk deploy PIIWebDeployStack && node gen-auth-config.js web",
+    "cdk-synth-web": "cdk synth PIIWebDeployStack",
+    "cdk-destroy": "cdk destroy --force --all",
+    "cdk-synth": "cdk synth --all",
+    "cdk-diff": "cdk diff --all",
+    "cdk-app-setup": "node setup.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "aws-cdk": "2.1019.1",
+    "chalk": "^4.1.2",
+    "enquirer": "^2.3.6",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-amplify-alpha": "^2.201.0-alpha.0",
+    "aws-cdk-lib": "2.201.0",
+    "constructs": "^10.4.2",
+    "dotenv": "^16.0.1",
+    "esbuild": "^0.25.5",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,78 @@
+# Define default settings
+default:
+  tags:
+    - arch:amd64
+    - size:2xlarge
+
+# Define stages
+stages:
+  - build
+  - deploy
+
+# Cache node_modules for faster builds
+cache:
+  paths:
+    - frontend/node_modules/
+
+# Global variables
+variables:
+  AWS_DEFAULT_REGION: us-east-1
+  # Use this variable name for GitLab's built-in AWS role assumption
+  AWS_CREDS_TARGET_ROLE:  arn:aws:iam::135511470273:role/example-cicd-gitlab
+
+# Build stage for frontend
+build:
+  stage: build
+  image: node:18
+  script:
+    - cd frontend
+    - mkdir -p src/assets
+    - touch src/assets/architecture.png
+    - echo "Running npm ci..." | tee build.log
+    - npm ci --quiet >> build.log 2>&1
+    - echo "Running npm build..." | tee -a build.log
+    - CI=false npm run build --silent >> build.log 2>&1
+    - echo "Build completed" | tee -a build.log
+  artifacts:
+    paths:
+      - frontend/build/
+      - build.log
+    expire_in: 1 week
+
+# Deploy stage for deploying to Amplify
+deploy:
+  stage: deploy
+  image:
+    name: amazon/aws-cli:latest
+    entrypoint: ['/usr/bin/env']
+  dependencies:
+    - build
+  variables:
+    AWS_DEFAULT_REGION: us-east-1
+    AMPLIFY_APP_ID: "${AMPLIFY_APP_ID}"
+  script:
+    - aws sts get-caller-identity  # Verify AWS authentication is working
+    - yum install -y zip > /dev/null 2>&1
+    - cd frontend/build
+    - zip -q -r ../../frontend-build.zip .
+    - cd ../..
+    - ls -la frontend-build.zip
+    - |
+      S3_BUCKET="amplify-zip-bucket314"
+      S3_KEY="deployments/frontend-build-${CI_PIPELINE_ID}-$(date +%s).zip"
+      echo "Uploading zip file to S3..."
+      aws s3 cp frontend-build.zip s3://${S3_BUCKET}/${S3_KEY}
+
+      S3_URL=$(aws s3 presign s3://${S3_BUCKET}/${S3_KEY} --expires-in 300)
+      aws amplify start-deployment --app-id "$AMPLIFY_APP_ID" --branch-name main --source-url "${S3_URL}"
+      aws s3 rm s3://${S3_BUCKET}/${S3_KEY}
+    - echo "Deployment command completed"
+  artifacts:
+    paths:
+      - deploy.log
+    expire_in: 1 week
+  # Only run deployment on main branch
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+    - when: never

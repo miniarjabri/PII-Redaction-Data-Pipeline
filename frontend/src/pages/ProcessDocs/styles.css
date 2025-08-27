@@ -1,0 +1,324 @@
+/* Common header style shared across pages */
+.pd-header {
+  margin: 0;
+  padding: 50px 30px;
+  color: #fff;
+  background-color: #1a365d;
+  background-image: url("https://images.unsplash.com/photo-1729575846511-f499d2e17d79?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFja2dyb3VuZCUyMHdlYnNpdGV8ZW58MHx8MHx8fDA%3D");
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.pd-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.pd-header > div {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.pd-header h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Common content style shared across pages */
+.pd-content {
+  background-color: #fff;
+  margin: 20px 30px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pd-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Custom uploader styles to replace rsuite */
+.uploader-container {
+  border: 2px dashed #d9d9d9;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  position: relative;
+  margin-top: 20px;
+}
+
+.uploader-container:hover {
+  border-color: #4CAF50;
+}
+
+.uploader-drag-area {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.uploader-icon {
+  font-size: 4em;
+  margin-bottom: 8px;
+  color: #4CAF50;
+}
+
+.uploader-text {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.uploader-file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow: auto;
+}
+
+.uploader-file-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.uploader-file-item:last-child {
+  border-bottom: none;
+}
+
+.uploader-file-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.uploader-file-size {
+  margin: 0 15px;
+  color: #999;
+  font-size: 12px;
+}
+
+/* Message component styles */
+.message {
+  padding: 15px 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.message-info {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.message-warning {
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+}
+
+.message-error {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+}
+
+.message-success {
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.message-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.message-content {
+  flex: 1;
+}
+
+.message-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Progress bar styles */
+.progress-container {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: right;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Checkbox styles */
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+
+.checkbox-input {
+  margin-right: 8px;
+  margin-top: 3px;
+}
+
+.checkbox-label {
+  flex: 1;
+}
+
+.checkbox-description {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Button styles */
+.button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button-primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: #3e8e41;
+}
+
+.button-primary:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.button-icon {
+  margin-right: 6px;
+}
+
+.button-loading {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.float-right {
+  float: right;
+}
+
+/* Help icon */
+.help-icon {
+  margin-left: 5px;
+  color: #999;
+  cursor: pointer;
+}
+
+.help-icon:hover {
+  color: #666;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  max-width: 300px;
+}
+
+.tooltip-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .pd-header {
+    height: auto;
+    padding: 20px 30px;
+  }
+  
+  .pd-content {
+    margin: 8px 15px 10px 15px;
+    padding: 15px;
+  }
+  
+  .message {
+    margin: 15px 15px;
+  }
+}

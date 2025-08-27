@@ -1,0 +1,183 @@
+/* Header styles */
+.rd-header {
+  margin: 0;
+  padding: 50px 30px;
+  color: #fff;
+  background-color: #1a365d;
+  background-image: url("https://images.unsplash.com/photo-1729575846511-f499d2e17d79?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFja2dyb3VuZCUyMHdlYnNpdGV8ZW58MHx8MHx8fDA%3D");
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.rd-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.rd-header > div {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.rd-header h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Card container for the table */
+.rd-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px 30px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Date picker container styles */
+.date-picker-container {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+}
+
+.date-picker-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 200px;
+}
+
+.date-display {
+  padding: 10px 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.date-display:hover {
+  border-color: #4CAF50;
+}
+
+.calendar-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4CAF50;
+}
+
+.date-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Table styles */
+.workflow-table-container {
+  padding: 0;
+  overflow-x: auto;
+}
+
+.workflow-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  color: #333;
+}
+
+.workflow-table th {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: left;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.workflow-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.workflow-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.no-data {
+  text-align: center;
+  color: #666;
+  padding: 32px 16px;
+}
+
+/* Status badge styling */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+/* Error message styling */
+.error-message {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 30px;
+  color: #d13212;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: flex-start;
+}
+
+.error-message::before {
+  content: "⚠️";
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.download-icon {
+  margin-right: 10px;
+}
+.shield-icon {
+  margin-right: 10px;
+  color: #4CAF50;
+}
+
+.check-icon {
+  color: #4CAF50;
+  margin-right: 10px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,265 @@
+/* Table styles */
+.document-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.document-table th {
+  background-color: #FAFAFA;
+  color: #757575;
+  font-weight: bold;
+  text-align: left;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.document-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.document-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.document-table tbody tr.selected-row {
+  background-color: #E1F5FE;
+  font-weight: bold;
+}
+
+/* Card styles */
+.documents-card, .summary-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.summary-card {
+  padding: 20px;
+}
+
+.summary-card h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+/* Summary stats */
+.summary-stats {
+  display: flex;
+  align-items: center;
+}
+
+.summary-stat {
+  font-size: 14px;
+}
+
+.summary-stat span {
+  color: #666;
+}
+
+.summary-stat-divider {
+  height: 24px;
+  width: 1px;
+  background-color: #e0e0e0;
+  margin: 0 24px;
+}
+
+/* Loading styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #666;
+}
+
+.loading-spinner {
+  font-size: 24px;
+  color: #5bc0de;
+  margin-bottom: 16px;
+}
+
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+/* Message styles */
+.error-message {
+  background-color: #fdeded;
+  border: 1px solid #f0a9a9;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+  color: #d13212;
+  display: flex;
+  align-items: center;
+}
+
+.info-message {
+  background-color: #e8f4fd;
+  border: 1px solid #b3e0ff;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+  color: #0066cc;
+  display: flex;
+  align-items: center;
+}
+
+/* No data message */
+.no-data {
+  text-align: center;
+  color: #666;
+  padding: 32px 16px;
+}
+
+/* Document viewer styles */
+.document-info-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.document-viewer-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 70vh;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.pdf-embed {
+  border: none;
+}
+
+.empty-document {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  padding: 24px;
+  text-align: center;
+}
+
+.fullscreen-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #f0f2f5;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.fullscreen-button:hover {
+  background-color: #e4e6ea;
+}
+
+.tif-viewer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.loading-document {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 16px;
+}
+
+.loading-document .fa-spin {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #0066cc;
+}
+
+.empty-document {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  padding: 24px;
+  text-align: center;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.download-button:hover {
+  background-color: #0052a3;
+}
+
+/* PHI entities display */
+.entities-info {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.entities-info h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 16px;
+}
+
+.entities-list {
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.entities-list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.entities-list li strong {
+  color: #0066cc;
+}
